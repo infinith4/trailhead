@@ -25,3 +25,17 @@ The `sfdx-project.json` file contains useful configuration information for your 
 https://trailhead.salesforce.com/ja/content/learn/projects/communities_share_crm_data/create_portal_and_users?trailmix_creator_id=yasael&trailmix_slug=salesforce-site
 
 https://curious-koala-je7w7s-dev-ed.my.site.com/UrsaMajor/s/
+
+SiteDotCom
+
+https://developer.salesforce.com/docs/atlas.ja-jp.api_meta.meta/api_meta/meta_sitedotcom.htm
+
+https://help.salesforce.com/s/articleView?id=sf.siteforce_website_export.htm&language=ja&r=https%3A%2F%2Fwww.google.com%2F&type=5
+
+https://help.salesforce.com/s/articleView?id=sf.siteforce_website_importing.htm&type=5
+
+
+https://curious-koala-je7w7s-dev-ed--sitestudio.ap1.force.com/
+
+https://curious-koala-je7w7s-dev-ed.builder.salesforce-experience.com/
+
