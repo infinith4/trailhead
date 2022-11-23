@@ -39,3 +39,4 @@ https://curious-koala-je7w7s-dev-ed--sitestudio.ap1.force.com/
 
 https://curious-koala-je7w7s-dev-ed.builder.salesforce-experience.com/
 
+https://help.salesforce.com/s/articleView?id=sf.sites_site_pages.htm&type=5
