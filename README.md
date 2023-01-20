@@ -11,6 +11,7 @@ sfdx force:source:retrieve -m ApexPage -u curious_koala
 sfdx force:source:retrieve -m CustomObject -u curious_koala
 sfdx force:source:retrieve -m StaticResource -u curious_koala
 sf retrieve metadata --metadata CustomObject
+sfdx force:source:retrieve -m CustomTab
 
 //Lightning Auraコンポーネント
 sfdx force:source:retrieve -m AuraDefinitionBundle -u curious_koala
