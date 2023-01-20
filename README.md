@@ -33,3 +33,9 @@ sfdx force:mdapi:retrieve -s -r ./mdapipkg -u curious_koala -p "curious_koala_pa
 sf retrieve metadata --source-dir ./force-app/main/default/metadatatest
 
 sfdx force:source:retrieve -p ./force-app/main/default/metadatatest
+
+
+https://yhayashi30.org/blog/2019/09/23/vscode-orgbrowser/
+
+
+org browser で取得する
