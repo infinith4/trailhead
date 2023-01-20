@@ -12,3 +12,5 @@ sfdx force:source:retrieve -m ApexPage -u curious_koala
 sfdx force:source:retrieve -m AuraDefinitionBundle -u curious_koala
 //Lightning Webコンポーネント
 sfdx force:source:retrieve -m LightningComponentBundle -u curious_koala
+
+sfdx force:mdapi:retrieve --retrievetargetdir force-app_1 -k package.xml
