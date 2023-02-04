@@ -3,7 +3,7 @@
 https://qiita.com/shunkosa/items/e6248520bff90f397158#:~:text=%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%91%E3%83%AC%E3%83%83%E3%83%88%E3%82%92%E9%96%8B%E3%81%8D(Ctrl,%E9%81%B8%E6%8A%9E%E3%81%97%E3%81%A6OK%E3%81%A7%E3%81%99%E3%80%82
 
 
-sfdx force:auth:web:login -r https://login.salesforce.com -a VSCodePlaygrand
+sfdx force:auth:web:login -r https://login.salesforce.com -a VSCodePlaygrand -u curious_koala
 
 sfdx config:set defaultusername=VSCodePlaygrand
 
@@ -11,12 +11,16 @@ sfdx force:org:list
 or
 sfdx force:org:display
 
+sfdx force:source:retrieve -m "ApexClass"
+
 sfdx force:source:retrieve -m "Profiles"
 sfdx force:source:retrieve -m "CustomObject"
 
 sfdx force:source:retrieve -p ./force-ap
 
-sfdx force:source:retrieve -m CustomObject -u curious_koala
+sfdx force:source:deploy -m "ApexClass:CustomObject01Controller"
+
+
 
 # Salesforce DX Project: Next Steps
 
