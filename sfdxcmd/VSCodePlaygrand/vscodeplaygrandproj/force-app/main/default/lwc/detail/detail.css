@@ -1,0 +1,7 @@
+body{
+  margin: 0;
+}
+.price {
+  color: red;
+  font-weight: bold;
+}

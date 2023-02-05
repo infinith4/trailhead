@@ -20,7 +20,21 @@ sfdx force:source:retrieve -p ./force-ap
 
 sfdx force:source:deploy -m "ApexClass:CustomObject01Controller"
 
+sfdx force:apex:execute --apexcodefile ./scripts/apex/CustomObject01.apex
 
+sfdx force:source:deploy -m "Trigger:CustomObject01TriggerSharing"
+
+Account myAccount = new Account(Name = 'MyAccount');
+Insert myAccount;
+For (Integer x = 0; x < 250; x++){
+   Account newAccount = new Account (Name='MyAccount' + x);
+   try {
+        Insert newAccount;
+   } catch (Exception ex) {
+        System.debug (ex) ;
+   }
+   insert new Account (Name='myAccount');
+}
 
 # Salesforce DX Project: Next Steps
 
