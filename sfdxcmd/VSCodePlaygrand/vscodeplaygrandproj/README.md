@@ -22,7 +22,7 @@ sfdx force:source:deploy -m "ApexClass:CustomObject01Controller"
 
 sfdx force:apex:execute --apexcodefile ./scripts/apex/CustomObject01.apex
 
-sfdx force:source:deploy -m "Trigger:CustomObject01TriggerSharing"
+sfdx force:source:deploy -m "ApexTrigger:CustomObject01TriggerSharing"
 
 Account myAccount = new Account(Name = 'MyAccount');
 Insert myAccount;
@@ -35,6 +35,16 @@ For (Integer x = 0; x < 250; x++){
    }
    insert new Account (Name='myAccount');
 }
+
+sfdx force:source:retrieve -m "LightningComponentBundle"
+
+
+sfdx force:source:deploy -m "LightningComponentBundle:bikeCard"
+
+0055i0000060j6nAAA
+infinith4@gmail.com.curious-koala-je7w7s-dev-ed.0001
+
+
 
 # Salesforce DX Project: Next Steps
 

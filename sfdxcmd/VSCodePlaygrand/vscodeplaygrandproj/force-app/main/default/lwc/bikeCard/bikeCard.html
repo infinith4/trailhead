@@ -1,5 +1,9 @@
 <template>
     <div>
+        <lightning-button onclick={countNum} label="countNum" class="slds-m-left_x-small"></lightning-button>
+        <div>Count: {countData}</div>
+        <lightning-button onclick={countShareNum} label="countShareNum" class="slds-m-left_x-small"></lightning-button>
+        <div>CountShare: {countShareData}</div>
         <div>Name: {name}</div>
         <div>Description: {description}</div>
         <lightning-badge label={material}></lightning-badge>

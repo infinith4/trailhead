@@ -1,10 +1,27 @@
 public with sharing class CustomObject01Controller {
+  @AuraEnabled(cacheable=true)
   //全レコード取得
   public static List<CustomObject01__c> getAllRecords() {
     return [SELECT Id,Name,Num__c FROM CustomObject01__c];
   }
 
+  @AuraEnabled(cacheable=true)
+  //全レコード数取得
+  public static Integer getAllRecordsCount() {
+    return Database.countQuery('SELECT count() FROM CustomObject01__c');
+    //return [SELECT Count() FROM CustomObject01__c limit 1];
+  }
+
+  @AuraEnabled(cacheable=true)
+  //全Shareレコード数取得
+  public static Integer getAllShareRecordsCount() {
+    String userOrGroupId = '00G5i000006WnLuEAK';
+    return Database.countQuery('SELECT count() FROM CustomObject01__Share WHERE UserOrGroupId = :userOrGroupId');
+    //return [SELECT Count() FROM CustomObject01__c limit 1];
+  }
+
   //データインサート
+  @AuraEnabled(cacheable=true)
   public static void insertRecords(Integer insertNum, Integer typeNum) {
     List<CustomObject01__c> newCustomObject01List = new List<CustomObject01__c>();
     for (Integer i = 0; i < insertNum; i++){

@@ -18,14 +18,17 @@ trigger CustomObject01TriggerSharing on CustomObject01__c (after insert) {
             recruiterShr.ParentId = customObject01.Id;
             //hmShr.ParentId = customObject01.Id;
             
-            List<User> userIdList = [select Id FROM User where Username = 'infinith4@curious-koala-je7w7s.com' limit 1 ];
+            List<User> userIdList = [select Id FROM User where Username = 'infinith4@gmail.com.curious-koala-je7w7s-dev-ed.0002'];  //0055i0000060shjAAA
+            System.debug('------userIdList[0].Id' + userIdList[0].Id);
+            List<GroupMember> groupMemberList = [select Id, UserOrGroupId, GroupId FROM GroupMember where UserOrGroupId = :userIdList[0].Id];
+            System.debug('------groupMemberList[0].Id' + groupMemberList[0].Id);
+
             // Set the ID of user or group being granted access
-            System.debug('------' + userIdList[0].Id);
-            recruiterShr.UserOrGroupId = '00G5i000006WnLuEAK'; //userIdList[0].Id;
+            recruiterShr.UserOrGroupId = groupMemberList[0].GroupId; //notworking groupMemberList[0].UserOrGroupId;  //'00G5i000006WnLuEAK'; //userIdList[0].Id;
             //hmShr.UserOrGroupId = customObject01.Hiring_Manager__c;
             
             // Set the access level
-            recruiterShr.AccessLevel = 'Edit';
+            recruiterShr.AccessLevel = 'Read';
             //hmShr.AccessLevel = 'read';
             
             // Set the Apex sharing reason for hiring manager and recruiter
@@ -34,7 +37,10 @@ trigger CustomObject01TriggerSharing on CustomObject01__c (after insert) {
             //hmShr.RowCause = Schema.CustomObject01__Share.RowCause.Hiring_Manager__c;
             
             // Add objects to list for insert
-            customObject01_Shrs.add(recruiterShr);
+
+            if(customObject01_Shrs.size() < 3){
+                customObject01_Shrs.add(recruiterShr);
+            }
             //jobShrs.add(hmShr);
         }
         
